@@ -1,0 +1,78 @@
+Nesne yönelimli programlamada (OOP), kalıtım , bir sınıfın ( alt sınıf) ana sınıfın alt sınıflarını oluşturduğu iki sınıf arasındaki ilişkiyi tanımlar.
+Karmaşıklığı azaltmak ve dili basitleştirmek için java' da birden fazla kalıtım desteklenmez.
+ 
+
+public class Car extends Bmv, Tofas {
+
+	// bu method hangi class'a ait olduğunu bilemeyiz. Karmaşıklık oluşuyor.
+    	void dark(){
+		System.out.println("Karanlık Özelliği bulunmaktadır...");
+	}
+	
+	// bu method hangi class'a ait olduğunu bilemeyiz. Karmaşıklık oluşuyor.
+	void on(){
+		System.out.println("Karanlık özelliği aktif");
+	}
+	
+	void off(){
+		System.out.println("Karanlık özelliği pasif");
+	}
+}
+
+public class Bmv {
+    
+	void dark(){
+		System.out.println("Karanlık Özelliği bulunmaktadır...");
+	}
+	
+	void on(){
+		System.out.println("Karanlık özelliği aktif");
+	}
+	
+	void off(){
+		System.out.println("Karanlık özelliği pasif");
+	}
+}
+
+public class Tofas {
+
+    	void dark(){
+		System.out.println("Karanlık Özelliği bulunmaktadır...");
+	}
+	
+	void on(){
+		System.out.println("Karanlık özelliği aktif");
+	}
+
+	// Off() bulunmamaktadır....
+}
+
+Car class'ında bulunan methodların hangi sınıfa ait olduğunu bilmiyoruz. Bu yüzden Java Çoklu kalıtımı desteklemez.
+Swift , Java , Fortran gibi 2003 revizyonundan bu yana , C# ve Ruby gibi bazı nesne yönelimli diller, protokoller veya arabirimler gerçek çoklu kalıtımın bazı işlevlerini sağlasa da tekli kalıtımı uygular .
+
+Çoklu kalıtımı destekleyen diller şunlardır: C++ , Common Lisp ( Common Lisp Object System (CLOS) aracılığıyla), EuLisp (EuLisp Object System TELOS aracılığıyla), Curl , Dylan , Eiffel , Logtalk , Object REXX , Scala ( mixin sınıflarının kullanımı yoluyla) 
+
+Not :  Java da çoklu kalıtım gerektiren coğu yerde interface kullanarak gerekli çözümü sağlarız...
+
+public interface Hayvan{
+
+	void hareket();
+
+}
+
+public interface Insan{
+	
+	void konus();
+}
+
+pblic class Canli implements Hayvan, Insan {
+
+@Override
+public void hareket(){}
+public void konus()[};
+}
+
+
+Yardımcı kaynak :
+https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem
+ Java ve Java Teknolojileri / Tevfik Kızılören
